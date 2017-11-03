@@ -1,0 +1,21 @@
+# See https://help.github.com/ignore-files/ for more about ignoring files.
+
+# dependencies
+/react-example/node_modules
+
+# testing
+/react-example/coverage
+
+# production
+/react-example/build
+
+# misc
+/react-example/.DS_Store
+/react-example/.env.local
+/react-example/.env.development.local
+/react-example/.env.test.local
+/react-example/.env.production.local
+
+/react-example/npm-debug.log*
+/react-example/yarn-debug.log*
+/react-example/yarn-error.log*
