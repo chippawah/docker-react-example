@@ -1,0 +1,23 @@
+version: '3'
+services:
+  haproxy:
+    image: 'dockercloud/haproxy:1.6.6'
+    links:
+      - frontend
+    ports:
+      # Exposed to http://localhost:80
+      - '80:80'
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+  frontend:
+    build:
+      context: './react-example/'
+      dockerfile: 'Dockerfile'
+    command: sh -c 'yarn start'
+    environment:
+      - VIRTUAL_HOST=/,/*
+      - PORT=80
+    expose:
+      - '80'
+    volumes:
+      - ./react-example/src:/microserv/src
