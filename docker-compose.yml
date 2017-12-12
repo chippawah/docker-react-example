@@ -11,11 +11,14 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
   frontend:
     build:
-      context: './react-example/'
+      context: './app/'
       dockerfile: 'Dockerfile'
+      args:
+        PUBLIC_URL: '/tester/'
     command: sh -c 'yarn start'
     environment:
-      - VIRTUAL_HOST=/,/*
+      - VIRTUAL_HOST=/tester/,/tester/*
+      - REACT_URL_SUFFIX=/tester
       - PORT=80
     expose:
       - '80'
