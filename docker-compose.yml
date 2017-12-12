@@ -13,11 +13,12 @@ services:
     build:
       context: './app/'
       dockerfile: 'Dockerfile'
+      args:
+        PUBLIC_URL: '/tester/'
     command: sh -c 'yarn start'
     environment:
       - VIRTUAL_HOST=/tester/,/tester/*
       - REACT_URL_SUFFIX=/tester
-      - PUBLIC_URL=/tester/
       - PORT=80
     expose:
       - '80'
