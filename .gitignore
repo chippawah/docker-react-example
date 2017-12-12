@@ -1,13 +1,13 @@
 # See https://help.github.com/ignore-files/ for more about ignoring files.
 
 # dependencies
-/react-example/node_modules
+/**/node_modules
 
 # testing
 /react-example/coverage
 
 # production
-/react-example/build
+/**/build
 
 # misc
 /react-example/.DS_Store
